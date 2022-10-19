@@ -1,0 +1,11 @@
+# ignore All .xlsx files
+*.xlsx
+
+# ignore Data Files
+consolidate/DataFiles
+
+# ignore dist
+consolidate/dist
+
+# ignore .idea
+consolidate/.idea
