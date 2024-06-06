@@ -1,11 +1,17 @@
-# ignore All .xlsx files
+# ignore All .xlsx and .xlsb files
 *.xlsx
+*.xlsb
 
 # ignore Data Files
-consolidate/DataFiles
+**/DataFiles/*
 
 # ignore dist
-consolidate/dist
+**/dist/*
 
 # ignore .idea
-consolidate/.idea
+**/.idea/*
+
+# ignore build file
+**/build
+
+"Consolidate 3.0"/dist
