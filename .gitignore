@@ -14,4 +14,10 @@
 # ignore build file
 **/build
 
+<<<<<<< HEAD
 "Consolidate 3.0"/dist
+=======
+"consolidate 1.0"/dist
+"consolidate 2.0"/dist
+"consolidate 3.0"/dist
+>>>>>>> 89d56d4925bad2034a47d41b62d9728836c2dcd2
