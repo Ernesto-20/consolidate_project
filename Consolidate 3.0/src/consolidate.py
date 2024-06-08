@@ -90,7 +90,8 @@ def consolidate(file_list, file_name, file_model, name_model, file_stock):
         is_pivot = name == 'jor'
         worker = WorkerFile(name, ResumeOneManage.get_resume_one(ws_resume_1, is_pivot=is_pivot),
                             ResumeTwoManage.get_resume_two(ws_resume_2, is_pivot=is_pivot),
-                            ResumeThreeManage.get_resume_three(ws_resume_3),
+                            ResumeThreeManage.get_resume_ingreso_egreso(ws_resume_3),
+                            ResumeThreeManage.get_resume_saldo(ws_resume_3),
                             ResumeDivManage.get_resume_div(ws_div))
         worker_files_list.append(worker)
         
@@ -121,15 +122,12 @@ def consolidate(file_list, file_name, file_model, name_model, file_stock):
         sys.exit()
 
     name_counter = 0
-    # print('********************')
-    # print(len(ids_cost_dict.keys()))
     for worker_file in worker_files_list:
         set_ids = set(worker_file.get_res_1().keys())
         differs = all_ids.difference(set_ids),
         # print('type: differs: ',type(differs)) #differs is a tuple with one set() object
         
         for differ in differs[0]:
-            print(differ)
             worker_file.get_res_1()[differ] = Res1(differ, None, None, None, [], [], None, None, None, ids_cost_dict[differ].get_cb(), ids_cost_dict[differ].get_cn())
 
         # Adding summary information
@@ -158,7 +156,8 @@ def consolidate(file_list, file_name, file_model, name_model, file_stock):
         ResumeTwoManage.set_resume_one(resume_2_ws, worker_file, is_pivot=is_pivot)
 
         # Set Res3 sheet in consolidation
-        ResumeThreeManage.set_resume_three(resume_2_ws, worker_file)
+        ResumeThreeManage.set_resume_ingreso_egreso(resume_2_ws, worker_file)
+        ResumeThreeManage.set_resume_saldo(resume_2_ws, worker_file)
 
         # Set Div sheet in consolidation
         ResumeDivManage.set_resume_div(resume_2_ws, worker_file, is_pivot= is_pivot)

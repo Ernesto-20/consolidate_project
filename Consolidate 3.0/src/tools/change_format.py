@@ -16,7 +16,6 @@
 #     @staticmethod
 #     def xlsx_to_xlsb(file: str):
 #         output = file[:len(file)-1]+'b'
-#         print(output)
 #         workbook = Workbook(file)
 #         workbook.save(output)
 

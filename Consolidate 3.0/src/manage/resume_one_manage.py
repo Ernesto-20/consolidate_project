@@ -74,8 +74,6 @@ class ResumeOneManage:
             worksheet.cell(row=counter_row, column=ATTRIBUTES_SET['Compra'], value=product.get_purchase())
 
             # if is_pivot:
-            # print(product.get_id(), ' - cb:', product.get_cb())
-            # print(product.get_id(), ' - cn:', product.get_cn())
             # worksheet.cell(row=counter_row, column=ATTRIBUTES_SET['CN'], value=product.get_cn())
             # worksheet.cell(row=counter_row, column=ATTRIBUTES_SET['CB'], value=product.get_cb())
 

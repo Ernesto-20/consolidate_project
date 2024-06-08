@@ -26,7 +26,6 @@ class ResumeDivManage:
         div = worker_report.get_div()
         counter_row = 3
         for item in div:
-            print('dividendo: ', item.get_div())
             if is_pivot:
                 worksheet.cell(row=counter_row, column=ATTRIBUTES_SET['Cargo'], value=item.get_cargo())
                 

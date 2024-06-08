@@ -57,14 +57,12 @@ new_model_ws_cue_con = load_sheet(new_model_wb, 'Cue-Con', new_model_file)
 
 # consolidate_wb = load_workbook(consolidate_file, data_only=True)
 # consolidate_ws_res = load_sheet(consolidate_wb, 'res', consolidate_file)
-print('Getting Data')
 file_model = FileModel(ADGroupManage.get_ad_group(pivot_ws_prod),
                        BCGroupManage.get_bc_group(pivot_ws_prod),
                        ProductPriceManage.get_products_price(pivot_ws_prec),
                        ConceptAccountManage.get_concept_account(pivot_ws_cue_con),
                        ConsolidateResumeManage.get_gross_cost(consolidate_ws_resume))
 
-print('Passing Data')
 # Passing Data
 ADGroupManage.set_ad_group(new_model_ws_prod, file_model)
 BCGroupManage.set_bc_group(new_model_ws_prod, file_model)
